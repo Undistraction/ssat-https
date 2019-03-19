@@ -19,7 +19,9 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "cypress": "^3.2.0",
+    "prettier": "^1.16.4",
+    "start-server-and-test": "^1.7.12"
   },
   "keywords": [
     "gatsby"
@@ -27,11 +29,13 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --https",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "cy:open": "cypress open",
+    "test:e2e": "start-server-and-test develop https://localhost:8000 cy:open"
   },
   "repository": {
     "type": "git",
